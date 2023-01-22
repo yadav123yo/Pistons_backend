@@ -7,8 +7,7 @@ const authMiddleware = require('../Middleware/authMiddleware');
 const app = express.Router();
 
 
-app.get('/', authMiddleware, (req, res) => {
-    
+app.get('/users',  (req, res) => {
     User.find({}, (err, users) => {
         if (err) {
             res.status(404).json({ message: 'Users not found' });
